@@ -19,13 +19,16 @@ def write_fixed_length(outfile, seq_iterator, line_length=60):
             for i in range(0, len(sequence), line_length):
                 print(sequence[i:i+line_length], file=fl)
 
+def fasta_tidy(infile, outfile, line_length):
+    sequences = read_fasta_file(infile)
+    write_fixed_length(outfile, sequences, line_length)
+
 @click.command(help="FASTA-TIDY: Rewrite ragged or single-line FASTA files to neat, line-wrapped FASTA files", no_args_is_help=True)
 @click.option("-i", "--infile", required=True, type=click.Path(exists=True), help="Input fasta file")
 @click.option("-o", "--outfile", required=True, type=click.Path(), help="Output fasta file")
 @click.option("-l", "--line-length", default=60, type=int, help="Line length for output fasta file", show_default=True)
-def main(infile, outfile, line_length):
-    sequences = read_fasta_file(infile)
-    write_fixed_length(outfile, sequences, line_length)
+def fasta_tidy_app(infile, outfile, line_length):
+    fasta_tidy(infile, outfile, line_length)
 
 if __name__ == '__main__':
-    main()
+    fasta_tidy_app()

@@ -5,6 +5,7 @@ description = "Reformats a FASTA file so sequences are wrapped at a fixed line l
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
+    "pytest>=8.3.4",
     "rich>=13.9.4",
     "rich-click>=1.8.6",
 ]
@@ -13,4 +14,4 @@ dependencies = [
 packages = ["src"]
 
 [project.scripts]
-fasta_tidy = "src.fasta_tidy:main"
+fasta_tidy = "src.fasta_tidy:fasta_tidy_app"
