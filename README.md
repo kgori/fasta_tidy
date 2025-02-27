@@ -1,4 +1,4 @@
 fasta_tidy
 ==
 
-Reformats a FASTA file so sequences are wrapped at a fixed line length.
+Rewrite ragged or single-line FASTA files to neat, line-wrapped FASTA files

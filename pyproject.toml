@@ -1,9 +1,9 @@
 [project]
 name = "fasta-tidy"
 version = "0.1.0"
-description = "Add your description here"
+description = "Reformats a FASTA file so sequences are wrapped at a fixed line length."
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.10"
 dependencies = [
     "rich>=13.9.4",
     "rich-click>=1.8.6",
