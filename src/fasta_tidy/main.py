@@ -3,7 +3,7 @@ import itertools
 import os
 import tempfile
 
-SAM_MAX_LEN=(2^31-1)
+SAM_MAX_LEN=(2**31-1)
 
 def read_fasta_file(filename, minlen=0, maxlen=SAM_MAX_LEN):
     with open(filename) as fl:
