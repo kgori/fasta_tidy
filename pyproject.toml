@@ -10,8 +10,12 @@ dependencies = [
     "rich-click>=1.8.6",
 ]
 
-[tool.setuptools]
-packages = ["src"]
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.uv]
+package = true
 
 [project.scripts]
-fasta_tidy = "src.fasta_tidy:fasta_tidy_app"
+fasta_tidy = "fasta_tidy.main:fasta_tidy_app"
+# fasta_tidy = "src.fasta_tidy:main"
