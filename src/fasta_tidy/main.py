@@ -14,8 +14,7 @@ def read_fasta_file(filename, minlen=0, maxlen=SAM_MAX_LEN):
                 header = next(group).strip()[1:]
             else:
                 sequence = ''.join(line.strip() for line in group)
-                l = len(sequence)
-                if minlen <= l <= maxlen:
+                if minlen <= len(sequence) <= maxlen:
                     yield header, sequence
 
 def write_fixed_length(outfile, seq_iterator, line_length=60):
